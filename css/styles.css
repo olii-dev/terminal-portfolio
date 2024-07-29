@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: rgb(233, 219, 183);
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#terminal {
+    width: 90%;
+    max-width: 95%;
+    height: 90vh;
+    background-color: rgb(40, 40, 45);
+    padding: 20px;
+    border: 2px solid rgb(153, 141, 120);
+    border-radius: 5px;
+    box-shadow: 0 0 10px #646124;
+    overflow-y: auto;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#terminal-content {
+    margin-bottom: 10px;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    margin-right: 5px;
+}
+
+#user-input {
+    background: none;
+    border: none;
+    color: rgb(233, 219, 183);
+    outline: none;
+    flex-grow: 1;
+    font-family: 'VT323', monospace;
+    caret-color: rgb(233, 219, 183);
+    font-size: 18px;
+}

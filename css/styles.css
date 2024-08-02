@@ -1,21 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 body {
-    background-color: rgb(30, 30, 30);
-    color: rgb(233, 219, 183);
     font-family: 'VT323', monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: rgb(30, 30, 30);
+    color: rgb(233, 219, 183);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: rgb(30, 30, 30);
+    color: rgb(233, 219, 183);
+}
+
+body.light {
+    background-color: rgb(233, 219, 183);
+    color: rgb(30, 30, 30);
+}
+
+body.solarized-dark {
+    background-color: #002b36;
+    color: #839496;
+}
+
+body.solarized-light {
+    background-color: #fdf6e3;
+    color: #657b83;
 }
 
 #terminal {
     width: 90%;
     max-width: 95%;
     height: 90vh;
-    background-color: rgb(40, 40, 45);
     padding: 20px;
     border: 2px solid rgb(153, 141, 120);
     border-radius: 5px;
@@ -23,6 +43,27 @@ body {
     overflow-y: auto;
     font-size: 18px;
     line-height: 1.5;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark #terminal {
+    background-color: rgb(40, 40, 45);
+    border-color: rgb(153, 141, 120);
+}
+
+body.light #terminal {
+    background-color: rgb(210, 210, 210);
+    border-color: rgb(70, 70, 70);
+}
+
+body.solarized-dark #terminal {
+    background-color: #073642;
+    border-color: #586e75;
+}
+
+body.solarized-light #terminal {
+    background-color: #eee8d5;
+    border-color: #93a1a1;
 }
 
 #terminal-content {
@@ -41,10 +82,29 @@ body {
 #user-input {
     background: none;
     border: none;
-    color: rgb(233, 219, 183);
     outline: none;
     flex-grow: 1;
     font-family: 'VT323', monospace;
-    caret-color: rgb(233, 219, 183);
     font-size: 18px;
+    transition: color 0.3s, caret-color 0.3s;
+}
+
+body.dark #user-input {
+    color: rgb(233, 219, 183);
+    caret-color: rgb(233, 219, 183);
+}
+
+body.light #user-input {
+    color: rgb(30, 30, 30);
+    caret-color: rgb(30, 30, 30);
+}
+
+body.solarized-dark #user-input {
+    color: #839496;
+    caret-color: #839496;
+}
+
+body.solarized-light #user-input {
+    color: #657b83;
+    caret-color: #657b83;
 }

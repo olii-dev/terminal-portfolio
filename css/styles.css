@@ -22,12 +22,12 @@ body.light {
     color: rgb(30, 30, 30);
 }
 
-body.solarized-dark {
+body.solarised-dark {
     background-color: #002b36;
     color: #839496;
 }
 
-body.solarized-light {
+body.solarised-light {
     background-color: #fdf6e3;
     color: #657b83;
 }
@@ -56,12 +56,12 @@ body.light #terminal {
     border-color: rgb(70, 70, 70);
 }
 
-body.solarized-dark #terminal {
+body.solarised-dark #terminal {
     background-color: #073642;
     border-color: #586e75;
 }
 
-body.solarized-light #terminal {
+body.solarised-light #terminal {
     background-color: #eee8d5;
     border-color: #93a1a1;
 }
@@ -99,12 +99,12 @@ body.light #user-input {
     caret-color: rgb(30, 30, 30);
 }
 
-body.solarized-dark #user-input {
+body.solarised-dark #user-input {
     color: #839496;
     caret-color: #839496;
 }
 
-body.solarized-light #user-input {
+body.solarised-light #user-input {
     color: #657b83;
     caret-color: #657b83;
 }

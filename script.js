@@ -6,18 +6,46 @@ document.addEventListener('DOMContentLoaded', function() {
     let secretNumber = 0;
     let attempts = 0;
 
-    document.body.className = 'dark';
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        document.body.className = 'dark';
+    }
+
+    const infoList = [
+        "Current grade: 10th",
+        "Current age: 15",
+        "Current location: Australia",
+        `Oli's current time: ${new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Australia/Adelaide' })}`,
+        "Current mood: Happy :)",
+        "Best food: Snag with onion",
+        "Best drink: Coca-Cola Vanilla",
+        "Favorite color: Blue",
+        "Favorite show: Ted Lasso",
+        "Favorite programming language: CSS",
+        "Favorite hobby: Gaming",
+        "Favorite animal: Dogs",
+        "Favorite season: Winter or maybe Summer I don't know :(",
+        "Favorite sport: Formula 1's",
+        "Favorite superhero: Spider-Man",
+    ];
 
     const commands = {
-        help: `List of available commands: about, projects, contact, github, interests, theme, game, clear, help`,
+        help: `List of available commands: about, projects, contact, github, interests, randominfo, toolstack, theme, game, clear, help`,
         about: "Hi, I'm Oli Mebberson, a 15 year old Web Developer.",
-        projects: 'Here are some of my projects: A personal dashboard, Sliffer, About Me, How many hours left, Pizza topping generator',
-        contact: 'You can contact me at oli@mebberson.com.',
+        projects: 'Here are my projects: Personal dashboard, Sliffer, About Me, How many hours left, Pizza topping generator, Portfolio, Penfolio.',
+        contact: 'You can contact me at oli@mebberson.com',
         github: 'You can find my github at @olii-dev',
         interests: 'I love music so so much! Hip-Hop, R&B, Pop, you name it! I also love to code, and I am always learning new things!',
-        theme: 'To change the theme, use the command: theme <dark|light|solarized-dark|solarized-light>',
+        theme: 'To change the theme, use the command: theme <dark|light|solarised-dark|solarised-light>',
         game: 'Start a new game by typing "play", and guess the number between 1 and 100!',
-        clear: 'Clear the terminal by typing "clear".'
+        clear: 'Clear the terminal by typing "clear".',
+        randominfo: () => {
+            const selectedInfo = getRandomInfo(infoList, 3);
+            return selectedInfo.join(', ');
+        },
+        toolstack: 'I use HTML5, CSS, JavaScript, Github, Visual Studio Code, Netlify, Vercel',
     };
 
     userInput.addEventListener('keydown', function(event) {
@@ -42,21 +70,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 guessNumber(Number(input));
             } else if (input.startsWith('theme')) {
                 const theme = input.split(' ')[1];
-                if (theme === 'dark' || theme === 'light' || theme === 'solarized-dark' || theme === 'solarized-light') {
+                if (theme === 'dark' || theme === 'light' || theme === 'solarised-dark' || theme === 'solarised-light') {
                     setTheme(theme);
                     typeEffect(`Theme changed to ${theme}.`);
                 } else {
-                    typeEffect(`Try 'theme dark', 'theme light', 'theme solarized-dark', or 'theme solarized-light'! :)`);
+                    typeEffect(`Try 'theme dark', 'theme light', 'theme solarised-dark', or 'theme solarised-light'! :)`);
                 }
             } else if (input === 'clear') {
                 clearTerminal();
             } else if (commands[input]) {
-                typeEffect(commands[input]);
+                typeEffect(typeof commands[input] === 'function' ? commands[input]() : commands[input]);
             } else {
                 typeEffect(`Command not found: ${input}`);
             }
         }
     });
+
+    function getRandomInfo(infoList, count) {
+        const shuffled = infoList.sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
 
     function startGame() {
         secretNumber = Math.floor(Math.random() * 100) + 1;
@@ -102,5 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setTheme(theme) {
         document.body.className = theme;
+        localStorage.setItem('theme', theme);
     }
 });

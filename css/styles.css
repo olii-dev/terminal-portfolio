@@ -108,3 +108,8 @@ body.solarised-light #user-input {
     color: #657b83;
     caret-color: #657b83;
 }
+
+.help-text {
+  font-weight: 400;
+  color: #00ffab;
+  }

@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "Favorite sport: Formula 1's",
         "Favorite superhero: Spider-Man",
         "Favorite emoji: 🫡",
-        "Favorite game: Rocket League",
-        "Favorite song: Real Love by Childish Gambino",
+        "Favorite game: Fall Guys",
+        "Favorite song: Real Love by Childish Gambino or Karma by AJR",
         "Favorite IDE: Visual Studio Code"
     ];
 
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const commands = {
         help: `List of available commands: about, projects, contact, github, interests, randominfo, toolstack, theme, game, clear, help, lol, secret, motivate`,
-        about: "Hi, I'm Oli Mebberson, a 15-year-old Web Developer from Australia!.",
+        about: "Hey, I'm Oli Mebberson, a 15-year-old Web Developer from Australia!.",
         projects: 'Here are my projects: Personal dashboard, Sliffer, About Me, Stashr, BytaOS (Coming Soon) & more! (Go here to see them: https://github.com/olii-dev?tab=repositories)',
         contact: 'You can contact me at oli@mebberson.com',
         github: 'You can find my GitHub at https://github.com/olii-dev',
-        interests: 'I love music so so much! Hip-Hop, R&B, Pop, you name it! I also love to code (HACK), and I am always learning new things! I love (ROLL)ing out updates too!',
+        interests: 'I love music so so much! Hip-Hop, R&B, Pop, you name it! I also love to code (HACK), and I am always learning new things! I love (ROLL)ing out updates too, aswell as playing video games and jailbreaking :O',
         theme: 'To change the theme, use the command: theme <dark|light|solarised-dark|solarised-light>',
         game: 'Start a new game by typing "play", and guess the number between 1 and 100!',
         clear: 'Clear the terminal by typing "clear".',
@@ -122,6 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
             let input = userInput.value.trim().toLowerCase();
             userInput.value = '';
             terminalContent.innerHTML += `<div><span class="prompt">olii-dev@portfolio:~$</span> ${input}</div>`;
+
+        terminalContent.scrollTop = terminalContent.scrollHeight;
+        userInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             
             if (input === 'play') {
                 if (!gameActive) {
@@ -210,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     resolve(line);
                 }
                 terminalContent.scrollTop = terminalContent.scrollHeight;
+                userInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 10);
         });
     }

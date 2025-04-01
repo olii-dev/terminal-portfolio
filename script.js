@@ -14,24 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const infoList = [
-        "Current grade: 10th",
-        "Current age: 15",
+        "Current grade: 11th",
+        "Current age: 16",
         "Current location: Australia",
         `Oli's current time: ${new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Australia/Adelaide' })}`,
         "Current mood: Happy :)",
         "Best food: Snag with onion",
         "Best drink: Coca-Cola Vanilla",
         "Favorite color: Blue",
-        "Favorite show: Ted Lasso or Mythic Quest",
+        "Favorite shows: Ted Lasso, INVINCIBLE & Mythic Quest",
         "Favorite programming language: CSS (It's where all the magic happens... ✨)",
         "Favorite hobby: Programming/Gaming",
         "Favorite animal: Dogs (Miniature Schnauzer)",
         "Favorite season: Winter or maybe Summer I don't know :(",
-        "Favorite sport: Formula 1's",
+        "Favorite sport: Formula 1",
         "Favorite superhero: Spider-Man",
         "Favorite emoji: 🫡",
         "Favorite game: Fall Guys",
-        "Favorite song: Real Love by Childish Gambino or Karma by AJR",
+        "Favorite song: man at the garden by Kendrick Lamar",
         "Favorite IDE: Visual Studio Code"
     ];
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const commands = {
         help: `List of available commands: about, projects, contact, github, interests, randominfo, toolstack, theme, game, clear, help, lol, secret, motivate`,
-        about: "Hey, I'm Oli Mebberson, a 15-year-old Web Developer from Australia!.",
+        about: "Hey, I'm Oli Mebberson, a 16-year-old Web Developer from Australia!.",
         projects: 'Here are my projects: Personal dashboard, Sliffer, About Me, Stashr, BytaOS (Coming Soon) & more! (Go here to see them: https://github.com/olii-dev?tab=repositories)',
         contact: 'You can contact me at oli@mebberson.com',
         github: 'You can find my GitHub at https://github.com/olii-dev',
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const selectedInfo = getRandomInfo(infoList, 3);
             return selectedInfo.join(', ');
         },
-        toolstack: 'I use HTML5, CSS, JavaScript, GitHub, Visual Studio Code, ChatGPT, Radxa X4 and Ubuntu!',
+        toolstack: 'I use HTML5, CSS, JavaScript, GitHub, Visual Studio Code, Raycast (Raycast AI aswell), Radxa X4, Ubuntu, Mac Air M4 2025 512/32',
         lol: () => {
             return getRandomJoke(lolList);
         },
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Don't watch the clock; do what it does. Keep going.",
                 "The future belongs to those who believe in the beauty of their dreams.",
                 "You are never too old to set another goal or to dream a new dream.",
-                "The only limit to our realization of tomorrow is our doubts of today.",
+                "The only limit to our realisation of tomorrow is our doubts of today.",
                 "Act as if what you do makes a difference. It does.",
                 "Success usually comes to those who are too busy to be looking for it.",
                 "Don't be afraid to give up the good to go for the great."
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
             typeEffect("Oh, you want to be rickrolled?");
         }, 1000);
         setTimeout(() => {
-            typeEffect("Ok! I'm never gonna give you up!");
+            typeEffect("I'm never gonna give you up!");
         }, 2000);
         setTimeout(() => {
             window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1', '_blank');
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { message: 'Injecting payload...', delay: 3000 },
             { message: 'Retrieving data...', delay: 4000 },
             { message: 'Decrypting files...', delay: 3000 },
-            { message: 'Hack complete! Access granted.', delay: 4000 },
+            { message: 'Access granted.', delay: 4000 },
             { message: 'Downloading "virus1" to your device...', delay: 9000 },
             { message: 'Succesfully downloaded "virus1" to your device!', delay: 3000 },
             { message: 'Now running "virus1"...', delay: 2000 },
